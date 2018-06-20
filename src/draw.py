@@ -31,7 +31,7 @@ graph.node_renderer.glyph = Oval(height=10, width=10, fill_color='color')
 graph.edge_renderer.data_source.data = dict(
     # this is a list of some kind that has to do with starting points
     start=node_indices,
-    end=[1, 2, 3, 4]
+    end=node_indices[1:]
 )  # this is a list of some kind that has to do with ending points
 
 
