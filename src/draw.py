@@ -44,7 +44,7 @@ for start_index, vertex in enumerate(graph_data.vertexes):
 graph.edge_renderer.data_source.data = dict(
     # this is a list of some kind that has to do with starting points
     start=start_indexes,
-    end=[end_indexes])  # this is a list of some kind that has to do with ending points
+    end=end_indexes)  # this is a list of some kind that has to do with ending points
 
 
 print(graph.edge_renderer.data_source.data)
