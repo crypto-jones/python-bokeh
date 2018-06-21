@@ -10,10 +10,12 @@ from graph import *
 WIDTH = 500
 HEIGHT = 500
 CIRCLE_SIZE = 30
+PROBABILITY = 0.6
 
 graph_data = Graph()
 graph_data.debug_create_test_data()
-graph_data.bfs(graph_data.vertexes[0])
+# graph_data.bfs(graph_data.vertexes[0])
+graph_data.randomize(WIDTH, HEIGHT, CIRCLE_SIZE, PROBABILITY)
 
 N = len(graph_data.vertexes)
 node_indices = list(range(N))
