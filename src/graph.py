@@ -1,3 +1,6 @@
+import random
+
+
 class Edge:
     def __init__(self, destination):
         self.destination = destination
@@ -32,3 +35,30 @@ class Graph:
 
         self.vertexes.extend(
             [debug_vertex_1, debug_vertex_2, debug_vertex_3, debug_vertex_4])
+
+    def bfs(self, start):
+        print('called BFS')
+        random_color = "#" + \
+            ''.join([random.choice('0123456789ABCDEF') for j in range(6)])
+
+        queue = []
+        found = []
+
+        queue.append(start)
+        found.append(start)
+
+        start.color = random_color
+
+        print('about to start while')
+        while len(queue) > 0:
+            v = queue[0]
+            for edge in v.edges:
+                if edge.destination not in found:
+                    found.append(edge.destination)
+                    queue.append(edge.destination)
+                    edge.destination.color = random_color
+
+            queue.pop(0)  # TODO: Look at collections.dequeue
+
+        print('about to return')
+        # return found
